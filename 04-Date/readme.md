@@ -127,12 +127,3 @@ Pour tous les exercices, vous pouvez utiliser le site [php.net](http://php.net) 
 **Consignes :**
 - Utilisez la fonction `strtotime()` pour soustraire 22 jours à la date actuelle.
 - Affichez le résultat au format `jj/mm/aaaa`.
-
-## TP : Calendrier dynamique
-
-**Objectif :** Créer un formulaire permettant de sélectionner un mois et une année, puis afficher un calendrier correspondant.
-
-**Consignes :**
-- Créez un formulaire avec deux listes déroulantes : une pour le mois et une pour l'année.
-- En fonction des choix de l'utilisateur, affichez un calendrier pour le mois et l'année sélectionnés.
-- Utilisez les fonctions `cal_days_in_month()` et `date()` pour générer le calendrier.
