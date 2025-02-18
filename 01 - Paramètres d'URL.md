@@ -14,11 +14,11 @@ Voici comment vous pourriez écrire le code PHP pour afficher ces paramètres :
 
 ```php
 <?php
-if (isset(\$_GET['city']) && isset(\$_GET['country'])) {
-    \$city = \$_GET['city'];
-    \$country = \$_GET['country'];
-    echo "Ville : " . htmlspecialchars(\$city) . "<br>";
-    echo "Pays : " . htmlspecialchars(\$country);
+if (isset($_GET['city']) && isset($_GET['country'])) {
+    $city = $_GET['city'];
+    $country = $_GET['country'];
+    echo "Ville : " . htmlspecialchars($city) . "<br>";
+    echo "Pays : " . htmlspecialchars($country);
 } else {
     echo "Les paramètres 'city' et 'country' ne sont pas définis dans l'URL.";
 }
