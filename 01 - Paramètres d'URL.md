@@ -1,125 +1,137 @@
-# PHP - Les paramètres d'URL
+# PHP - Les dates
 
-Les paramètres d'URL permettent de transmettre des informations à une page web via l'URL. En PHP, vous pouvez récupérer ces paramètres à l'aide de la superglobale `$_GET`. Voici une série d'exercices pour vous familiariser avec cette notion.
+# Mini-cours : Gestion des dates en PHP
+
+En PHP, la gestion des dates est essentielle pour de nombreuses applications, que ce soit pour afficher la date actuelle, calculer des intervalles de temps, ou formater des dates de manière spécifique. Voici un aperçu des concepts clés :
+
+## Fonction `date()`
+
+La fonction `date()` est utilisée pour formater une date ou une heure en une chaîne lisible. Elle prend deux arguments principaux :
+- **Format :** Une chaîne contenant les caractères de formatage.
+- **Timestamp :** Un timestamp Unix optionnel (par défaut, la date et l'heure actuelles sont utilisées).
 
 **Exemple :**
-
-Imaginons que vous avez une URL comme celle-ci : `index.php?city=Paris&country=France`.
-
-- `city` et `country` sont des paramètres d'URL.
-- Vous pouvez récupérer ces valeurs en PHP en utilisant `$_GET['city']` et `$_GET['country']`.
-- Vous pouvez ensuite afficher ces valeurs sur votre page web.
-
-Voici comment vous pourriez écrire le code PHP pour afficher ces paramètres :
-
 ```php
-<?php
-if (isset($_GET['city']) && isset($_GET['country'])) {
-    $city = $_GET['city'];
-    $country = $_GET['country'];
-    echo "Ville : " . htmlspecialchars($city) . "<br>";
-    echo "Pays : " . htmlspecialchars($country);
-} else {
-    echo "Les paramètres 'city' et 'country' ne sont pas définis dans l'URL.";
-}
-?>
+echo date('d/m/Y'); // Affiche la date au format jj/mm/aaaa
 ```
+
+## Caractères de formatage
+
+ - **d** : Jour du mois, avec zéro initial (01 à 31).
+ - **m** : Mois, avec zéro initial (01 à 12).
+ - **Y** : Année complète (par exemple, 2023).
+ - **l** : Jour de la semaine, en toutes lettres (par exemple, "lundi").
+ - **F** : Mois, en toutes lettres (par exemple, "janvier").
+
+**Exemple :**
+```php
+echo date('l j F Y'); // Affiche "lundi 2 octobre 2023"
+```
+
+## Fonction strtotime()
+
+La fonction `strtotime()` convertit une date en anglais en timestamp Unix. Elle est utile pour manipuler des dates exprimées en texte.
+
+**Exemple :**
+```php
+\$timestamp = strtotime('next Monday');
+echo date('d/m/Y', \$timestamp); // Affiche la date du prochain lundi
+```
+
+
+## Fonction time()
+
+La fonction `time()` retourne le timestamp Unix actuel, qui est le nombre de secondes écoulées depuis le 1er janvier 1970 (l'époque Unix).
+
+**Exemple :**
+```php
+echo time(); // Affiche le timestamp actuel
+```
+
+## Calculs de dates
+
+Pour calculer des intervalles de temps, vous pouvez utiliser des timestamps et des opérations arithmétiques.
+
+**Exemple :**
+```php
+\$future = strtotime('+20 days');
+echo date('d/m/Y', \$future); // Affiche la date dans 20 jours
+```
+
+
+Pour tous les exercices, vous pouvez utiliser le site [php.net](http://php.net) pour consulter la documentation officielle. N'hésitez pas à créer des pages avec du HTML/CSS pour afficher les résultats.
 
 ## Exercice 1
 
-**Objectif :** Vérifier l'existence de paramètres dans l'URL et les afficher.
+**Objectif :** Afficher la date courante au format `jj/mm/aaaa`.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `lastname` et `firstname` existent dans l'URL suivante : `index.php?lastname=Nemare&firstname=Jean`.
-- Affichez les valeurs de ces paramètres si elles existent.
-
-**Explication :** Utilisez `isset()` pour vérifier l'existence des paramètres.
+- Utilisez la fonction `date()` pour formater la date courante.
+- Exemple de sortie : `16/05/2016`.
 
 ## Exercice 2
 
-**Objectif :** Vérifier l'existence d'un paramètre spécifique et afficher un message en conséquence.
+**Objectif :** Afficher la date courante au format `jj-mm-aa`.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que le paramètre `age` existe dans l'URL suivante : `index.php?lastname=Nemare&firstname=Jean`.
-- Si le paramètre `age` existe, affichez sa valeur. Sinon, affichez un message indiquant que le paramètre n'existe pas.
-
-**Explication :** Utilisez `isset()` pour vérifier l'existence du paramètre et une condition pour afficher le message approprié.
+- Utilisez la fonction `date()` pour formater la date courante.
+- Exemple de sortie : `16-05-16`.
 
 ## Exercice 3
 
-**Objectif :** Vérifier l'existence de plusieurs paramètres de date et les afficher.
+**Objectif :** Afficher la date courante avec le jour de la semaine et le mois en toutes lettres.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `startDate` et `endDate` existent dans l'URL suivante : `index.php?startDate=2/05/2016&endDate=27/11/2016`.
-- Affichez les valeurs de ces paramètres si elles existent.
-
-**Explication :** Utilisez `isset()` pour vérifier l'existence des paramètres.
+- Utilisez la fonction `date()` pour formater la date courante.
+- Affichez le jour de la semaine et le mois en toutes lettres.
+- Exemple de sortie : `mardi 2 août 2016`.
+- **Bonus :** Faites-le en français.
 
 ## Exercice 4
 
-**Objectif :** Vérifier l'existence de paramètres techniques et les afficher.
+**Objectif :** Afficher les timestamps.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `language` et `server` existent dans l'URL suivante : `index.php?language=PHP&server=LAMP`.
-- Affichez les valeurs de ces paramètres si elles existent.
-
-**Explication :** Utilisez `isset()` pour vérifier l'existence des paramètres.
+- Affichez le timestamp du jour.
+- Affichez le timestamp du mardi 2 août 2016 à 15h00.
+- Utilisez la fonction `strtotime()` pour obtenir le timestamp.
 
 ## Exercice 5
 
-**Objectif :** Vérifier l'existence d'un paramètre numérique et l'afficher.
+**Objectif :** Calculer le nombre de jours entre deux dates.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que le paramètre `week` existe dans l'URL suivante : `index.php?week=12`.
-- Affichez la valeur de ce paramètre si elle existe.
-
-**Explication :** Utilisez `isset()` pour vérifier l'existence du paramètre.
+- Calculez le nombre de jours entre la date du jour et le 16 mai 2016.
+- Utilisez les fonctions `time()` et `strtotime()` pour obtenir les timestamps et calculez la différence.
 
 ## Exercice 6
 
-**Objectif :** Vérifier l'existence de paramètres de localisation et les afficher.
+**Objectif :** Afficher le nombre de jours dans le mois de février de l'année 2016.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `building` et `room` existent dans l'URL suivante : `index.php?building=12&room=101`.
-- Affichez les valeurs de ces paramètres si elles existent.
+- Utilisez la fonction `cal_days_in_month()` pour obtenir le nombre de jours dans le mois.
 
-**Explication :** Utilisez `isset()` pour vérifier l'existence des paramètres.
+## Exercice 7
 
-## Exercices supplémentaires
-
-### Exercice 7
-
-**Objectif :** Vérifier l'existence de paramètres et afficher un message personnalisé.
+**Objectif :** Afficher la date du jour plus 20 jours.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `username` et `userid` existent dans l'URL suivante : `index.php?username=jdoe&userid=123`.
-- Affichez un message de bienvenue utilisant ces paramètres si elles existent.
+- Utilisez la fonction `strtotime()` pour ajouter 20 jours à la date actuelle.
+- Affichez le résultat au format `jj/mm/aaaa`.
 
-### Exercice 8
+## Exercice 8
 
-**Objectif :** Vérifier l'existence de paramètres et effectuer une opération mathématique.
-
-**Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `number1` et `number2` existent dans l'URL suivante : `index.php?number1=10&number2=20`.
-- Affichez la somme de ces deux nombres si elles existent.
-
-### Exercice 9
-
-**Objectif :** Vérifier l'existence de paramètres et afficher une liste.
+**Objectif :** Afficher la date du jour moins 22 jours.
 
 **Consignes :**
-- Créez une page `index.php`.
-- Testez que les paramètres `item1`, `item2`, et `item3` existent dans l'URL suivante : `index.php?item1=apple&item2=banana&item3=cherry`.
-- Affichez ces éléments sous forme de liste si elles existent.
+- Utilisez la fonction `strtotime()` pour soustraire 22 jours à la date actuelle.
+- Affichez le résultat au format `jj/mm/aaaa`.
 
----
+## TP : Calendrier dynamique
 
-Ces exercices permettront aux élèves de mieux comprendre comment manipuler les paramètres d'URL en PHP.
+**Objectif :** Créer un formulaire permettant de sélectionner un mois et une année, puis afficher un calendrier correspondant.
+
+**Consignes :**
+- Créez un formulaire avec deux listes déroulantes : une pour le mois et une pour l'année.
+- En fonction des choix de l'utilisateur, affichez un calendrier pour le mois et l'année sélectionnés.
+- Utilisez les fonctions `cal_days_in_month()` et `date()` pour générer le calendrier.
