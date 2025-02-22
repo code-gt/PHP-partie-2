@@ -17,6 +17,9 @@
         <input type="submit" value="Envoyer">
     </form>
 
+    <?php
+    // Ajoutez votre code PHP ici pour vérifier et afficher les données du formulaire.
+    ?>
 
 
     <!-- Exercice 2 -->
