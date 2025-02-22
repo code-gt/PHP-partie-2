@@ -62,7 +62,6 @@ Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du f
 **Objectif :** Utiliser le formulaire HTML demandant le nom et le prénom et rediriger vers `user.php` avec la méthode GET.
 
 **Consignes :**
-- Créez dans le fichier `index.php` avec un formulaire HTML5 valide.
 - Utilisez la méthode GET pour envoyer les données à `user.php`.
 
 ## Exercice 2
@@ -70,7 +69,7 @@ Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du f
 **Objectif :** Créer un formulaire demandant le nom et le prénom et rediriger vers `user.php` avec la méthode POST.
 
 **Consignes :**
-- Créez dans le fichier `index.php` avec un formulaire HTML5 valide.
+- Créez dans le fichier `index.php` un formulaire HTML5 valide.
 - Utilisez la méthode POST pour envoyer les données à `user.php`.
 
 ## Exercice 3
@@ -94,7 +93,7 @@ Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du f
 **Objectif :** Créer un formulaire avec une liste déroulante pour la civilité, un champ texte pour le nom et un champ texte pour le prénom.
 
 **Consignes :**
-- Créez dans le fichier `index.php` avec un formulaire HTML5 valide.
+- Créez dans le fichier `index.php` un formulaire HTML5 valide.
 - Ajoutez une liste déroulante pour la civilité (Mr ou Mme).
 - Le formulaire doit rediriger vers `index.php`.
 
