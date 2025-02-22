@@ -7,7 +7,15 @@
 <body>
     <!-- Exercice 1 -->
     <h2>Exercice 1</h2>
-    <!-- Créez votre formulaire HTML ici -->
+    <form>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+
+        <input type="submit" value="Envoyer">
+    </form>
 
 
 
