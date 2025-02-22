@@ -59,7 +59,7 @@ Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du f
 
 ## Exercice 1
 
-**Objectif :** Créer un formulaire demandant le nom et le prénom et rediriger vers `user.php` avec la méthode GET.
+**Objectif :** Utiliser le formulaire HTML demandant le nom et le prénom et rediriger vers `user.php` avec la méthode GET.
 
 **Consignes :**
 - Créez dans le fichier `index.php` avec un formulaire HTML5 valide.
