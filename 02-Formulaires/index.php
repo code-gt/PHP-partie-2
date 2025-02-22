@@ -18,7 +18,7 @@
     </form>
 
     <?php
-    // Ajoutez votre code PHP ici pour vérifier et afficher les données du formulaire.
+    // Ajoutez votre code PHP ici pour rediriger vers `user.php` avec la méthode GET
     ?>
 
 
