@@ -31,21 +31,16 @@ Imaginons que vous avez un formulaire simple pour recueillir le nom et l'email d
 Et voici comment vous pourriez traiter ce formulaire dans `user.php` :
 
 ```php
-    <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['nom']) && isset($_POST['email'])) {
-        $nom = htmlspecialchars($_POST['nom']);
-        $email = htmlspecialchars($_POST['email']);
-        echo "Nom : " . $nom . "<br>";
-        echo "Email : " . $email;
-    } else {
-        echo "Certains champs sont manquants.";
-    }
+<?php
+if (isset($_POST['nom']) && isset($_POST['email'])) {
+    $nom = htmlspecialchars($_POST['nom']);
+    $email = htmlspecialchars($_POST['email']);
+    echo "Nom : " . $nom . "<br>";
+    echo "Email : " . $email;
 } else {
-    echo "Aucune donnée reçue.";
+    echo "Aucune donnée reçue ou certains champs sont manquants.";
 }
-    ?>
-
+?>
 ```
 
 Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du formulaire à `user.php`, où elles sont ensuite affichées.
