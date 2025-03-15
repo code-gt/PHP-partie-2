@@ -30,15 +30,7 @@ Imaginons que vous avez un formulaire simple pour recueillir le nom et l'email d
 
 Et voici comment vous pourriez traiter ce formulaire dans `user.php` :
 
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Résultat du Formulaire</title>
-</head>
-<body>
-    <h2>Résultat du Formulaire</h2>
+```php
     <?php
     if (\$_SERVER["REQUEST_METHOD"] == "POST") {
         \$nom = htmlspecialchars(\$_POST['nom']);
@@ -49,8 +41,6 @@ Et voici comment vous pourriez traiter ce formulaire dans `user.php` :
         echo "Aucune donnée reçue.";
     }
     ?>
-</body>
-</html>
 ```
 
 Dans cet exemple, nous utilisons la méthode POST pour envoyer les données du formulaire à `user.php`, où elles sont ensuite affichées.
