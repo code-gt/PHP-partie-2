@@ -32,9 +32,9 @@ Et voici comment vous pourriez traiter ce formulaire dans `user.php` :
 
 ```php
     <?php
-    if (\$_SERVER["REQUEST_METHOD"] == "POST") {
-        \$nom = htmlspecialchars(\$_POST['nom']);
-        \$email = htmlspecialchars(\$_POST['email']);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nom = htmlspecialchars(\$_POST['nom']);
+        $email = htmlspecialchars(\$_POST['email']);
         echo "Nom : " . \$nom . "<br>";
         echo "Email : " . \$email;
     } else {
